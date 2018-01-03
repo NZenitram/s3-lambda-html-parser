@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A function is triggered off an upload to a bucket. It logs the content
+  type of the uploaded object.
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+  S3:
+    Properties:
+      CodeUri: s3://nzenitram-lambda/951b94ed6225c00f972867bfca151f29
+      Events:
+        PhotoUpload:
+          Properties:
+            Bucket:
+              Ref: Bucket
+            Events: s3:ObjectCreated:*
+          Type: S3
+      Handler: lambda.lambda_handler
+      Policies: AmazonS3FullAccess
+      Runtime: python3.6
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
