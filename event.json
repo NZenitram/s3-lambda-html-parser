@@ -18,7 +18,7 @@
           "arn": "arn:aws:s3:::nzenitram-medium-posts",
           "name": "nzenitram-medium-posts",
           "ownerIdentity": {
-            "principalId": "552606384181"
+            "principalId": ""
           }
         },
         "s3SchemaVersion": "1.0"
@@ -30,7 +30,7 @@
       "awsRegion": "us-west-1",
       "eventName": "ObjectCreated:Put",
       "userIdentity": {
-        "principalId": "552606384181"
+        "principalId": ""
       },
       "eventSource": "aws:s3"
     }
